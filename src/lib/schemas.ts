@@ -34,3 +34,10 @@ export const assetSchema = z.object({
 
 /** Sentinel used in the Activity <Select> for "inherit from department". */
 export const INHERIT_ACTIVITY_VALUE = "__inherit__";
+
+export const userSchema = z.object({
+  email: z.string().email("A valid email is required"),
+  name: z.string().min(1, "Name is required"),
+  password: z.string().min(8, "Password must be at least 8 characters"),
+  role: z.enum(["ADMIN", "VIEWER"]),
+});

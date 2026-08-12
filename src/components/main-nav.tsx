@@ -15,12 +15,15 @@ const links = [
   { href: "/reports/by-activity", label: "By Function & Activity" },
 ];
 
-export function MainNav() {
+const adminLinks = [{ href: "/users", label: "Users" }];
+
+export function MainNav({ isAdmin }: { isAdmin?: boolean }) {
   const pathname = usePathname();
+  const allLinks = isAdmin ? [...links, ...adminLinks] : links;
 
   return (
     <nav className="flex flex-wrap gap-1">
-      {links.map((link) => {
+      {allLinks.map((link) => {
         const active =
           link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
         return (

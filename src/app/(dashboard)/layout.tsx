@@ -11,7 +11,7 @@ export default async function DashboardLayout({ children }: { children: React.Re
         <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-3 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-6">
             <span className="text-lg font-semibold">Fixed Asset Manager</span>
-            <MainNav />
+            <MainNav isAdmin={session?.user?.role === "ADMIN"} />
           </div>
           <div className="flex items-center gap-3">
             <span className="text-sm text-muted-foreground">
