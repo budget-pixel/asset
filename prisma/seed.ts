@@ -63,10 +63,10 @@ async function main() {
 
   const passwordHash = await bcrypt.hash("admin123", 10);
   await db.user.upsert({
-    where: { email: "admin@example.com" },
+    where: { username: "admin" },
     update: {},
     create: {
-      email: "admin@example.com",
+      username: "admin",
       name: "Admin",
       passwordHash,
       role: "ADMIN",
@@ -161,7 +161,7 @@ async function main() {
     });
   }
 
-  console.log("Seed complete. Login with admin@example.com / admin123");
+  console.log("Seed complete. Login with admin / admin123");
 }
 
 main()

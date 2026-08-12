@@ -19,13 +19,13 @@ export async function createUser(
     return { error: parsed.error.issues[0]?.message ?? "Invalid input" };
   }
 
-  const { email, name, password, role } = parsed.data;
+  const { username, name, password, role } = parsed.data;
   const passwordHash = await bcrypt.hash(password, 10);
 
   try {
-    await db.user.create({ data: { email, name, passwordHash, role } });
+    await db.user.create({ data: { username, name, passwordHash, role } });
   } catch {
-    return { error: "A user with that email already exists." };
+    return { error: "A user with that username already exists." };
   }
 
   revalidatePath("/users");

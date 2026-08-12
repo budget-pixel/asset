@@ -27,8 +27,8 @@ export function UserForm() {
         <Input id="user-name" name="name" required className="w-40" />
       </div>
       <div className="space-y-2">
-        <Label htmlFor="user-email">Email</Label>
-        <Input id="user-email" name="email" type="email" required className="w-56" />
+        <Label htmlFor="user-username">Username</Label>
+        <Input id="user-username" name="username" type="text" required className="w-40" />
       </div>
       <div className="space-y-2">
         <Label htmlFor="user-password">Password</Label>

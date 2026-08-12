@@ -36,7 +36,10 @@ export const assetSchema = z.object({
 export const INHERIT_ACTIVITY_VALUE = "__inherit__";
 
 export const userSchema = z.object({
-  email: z.string().email("A valid email is required"),
+  username: z
+    .string()
+    .min(1, "Username is required")
+    .regex(/^[a-zA-Z0-9_.-]+$/, "Username can only contain letters, numbers, . _ -"),
   name: z.string().min(1, "Name is required"),
   password: z.string().min(8, "Password must be at least 8 characters"),
   role: z.enum(["ADMIN", "VIEWER"]),

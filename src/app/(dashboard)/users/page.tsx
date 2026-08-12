@@ -41,7 +41,7 @@ export default async function UsersPage() {
           <TableHeader>
             <TableRow>
               <TableHead>Name</TableHead>
-              <TableHead>Email</TableHead>
+              <TableHead>Username</TableHead>
               <TableHead>Role</TableHead>
               <TableHead className="w-24" />
             </TableRow>
@@ -50,7 +50,7 @@ export default async function UsersPage() {
             {users.map((u) => (
               <TableRow key={u.id}>
                 <TableCell>{u.name}</TableCell>
-                <TableCell>{u.email}</TableCell>
+                <TableCell>{u.username}</TableCell>
                 <TableCell>
                   <UserRoleSelect
                     userId={u.id}

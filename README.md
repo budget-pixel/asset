@@ -58,7 +58,7 @@ Equipment, Vehicles, Furniture & Fixtures, Leasehold Improvements, Construction 
 Progress), a few departments/locations, six sample assets, and an admin login:
 
 ```
-email:    admin@example.com
+username: admin
 password: admin123
 ```
 

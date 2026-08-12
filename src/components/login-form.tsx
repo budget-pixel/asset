@@ -20,8 +20,8 @@ export function LoginForm({ callbackUrl }: { callbackUrl: string }) {
         <form action={formAction} className="space-y-4">
           <input type="hidden" name="callbackUrl" value={callbackUrl} />
           <div className="space-y-2">
-            <Label htmlFor="email">Email</Label>
-            <Input id="email" name="email" type="email" required autoComplete="email" />
+            <Label htmlFor="username">Username</Label>
+            <Input id="username" name="username" type="text" required autoComplete="username" />
           </div>
           <div className="space-y-2">
             <Label htmlFor="password">Password</Label>
